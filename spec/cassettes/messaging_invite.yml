@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sendbird.com/messaging/invite
+    body:
+      encoding: UTF-8
+      string: '{"channel_url":"jiver_group_messaging_AFD73870-2585-41C9-8E7F-D2A494BEC71A_e1ba77cca364b3d48cc6744550ea798113cf285c","users_ids":["user_12345"],"auth":"9d2e4c2d8a295ef883f5444775781c5bf59527d7"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Tue, 26 Jan 2016 10:14:50 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Language:
+      - en
+    body:
+      encoding: UTF-8
+      string: '{"channel":{"channel_url":"jiver_group_messaging_AFD73870-2585-41C9-8E7F-D2A494BEC71A_e1ba77cca364b3d48cc6744550ea798113cf285c"}}'
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 10:14:50 GMT
+recorded_with: VCR 3.0.1
