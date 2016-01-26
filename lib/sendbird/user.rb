@@ -6,6 +6,12 @@ module Sendbird
     attribute :nickname, String
     attribute :access_token, String
 
+    def create
+      json = client.post("#{path}/create", params)
+
+      self.class.new(json)
+    end
+
     private
 
       def path

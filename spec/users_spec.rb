@@ -18,6 +18,22 @@ describe Sendbird::User do
 
   	end
 
+  	context 'invalid attributes' do
+
+  		let(:user) { Sendbird::User.new }
+
+  		it 'raises an error' do
+  			expect {
+  				VCR.use_cassette "user_create_invalid_attributes" do
+		      	@created_user = user.create
+		      end
+		    }.to raise_error Sendbird::Error
+  	end
+
+  	end
+
+
+
   end
 
 end

@@ -18,18 +18,11 @@ module Sendbird
         name: name
       }
 
-      response = client.post("#{path}/create", params)
+      json = client.post("#{path}/create", params)
 
-      if response.status == 200
-        json = JSON.parse response.body
-        json["channel_url"] = json["channel"]["channel_url"]
+      json["channel_url"] = json["channel"]["channel_url"]
 
-        created_messaging = self.class.new(json)
-      else
-
-      end
-
-      created_messaging
+      self.class.new(json)
     end
 
     def invite(users)
@@ -40,12 +33,7 @@ module Sendbird
         users_ids: users.map(&:id)
       }
 
-      response = client.post("#{path}/invite", params)
-
-      if response.status == 200
-      else
-
-      end
+      json = client.post("#{path}/invite", params)
 
       self
     end
@@ -56,22 +44,14 @@ module Sendbird
         channel_url: channel_url
       }
 
-      response = client.post("#{path}/view", params)
+      json = client.post("#{path}/view", params)
 
-      if response.status == 200
-        json = JSON.parse response.body
-
-        json["members"].each do |member|
-          member["user_id"] = member["id"]
-          member["nickame"] = member["name"]
-        end
-
-        element = self.class.new(json)
-      else
-
+      json["members"].each do |member|
+        member["user_id"] = member["id"]
+        member["nickame"] = member["name"]
       end
 
-      element
+      self.class.new(json)
     end
 
     private

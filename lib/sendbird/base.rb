@@ -3,19 +3,6 @@ module Sendbird
 
     include Virtus.model
 
-    def create
-      response = client.post("#{path}/create", params)
-
-      if response.status == 200
-        json = JSON.parse response.body
-        created_element = self.class.new(json)
-      else
-
-      end
-
-      created_element
-    end
-
     def persisted?
       !reference_id.nil?
     end
