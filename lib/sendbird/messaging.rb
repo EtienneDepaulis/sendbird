@@ -1,16 +1,12 @@
 module Sendbird
   class Messaging < Base
 
-    attribute :id, String
     attribute :name, String
     attribute :channel_url, String
     attribute :last_message, String
     attribute :last_message_ts, Integer
     attribute :members, Array[Sendbird::User]
     attribute :created_at, String
-    attribute :channel_url, String
-
-
 
     def create
 
