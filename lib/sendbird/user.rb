@@ -1,44 +1,26 @@
 module Sendbird
-  class User
-
-    PATH = "user"
-
-    include Virtus.model
+  class User < Base
 
     attribute :id, String
     attribute :user_id, String
     attribute :nickname, String
     attribute :access_token, String
 
+    private
 
-    def create
-      response = client.post("#{PATH}/create", params)
-
-      if response.status == 200
-        user_json = JSON.parse response.body
-        created_user = self.class.new(user_json)
-      else
-
+      def path
+        "user"
       end
 
-      created_user
-    end
-
-    def persisted?
-      !user_id.nil?
-    end
-
-    private
+      def reference_id
+        user_id
+      end
 
       def params
         {
           id: id,
           nickname: nickname
         }
-      end
-
-      def client
-        @client ||= Client.new
       end
 
   end
