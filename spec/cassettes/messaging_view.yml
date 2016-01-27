@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Tue, 26 Jan 2016 10:14:53 GMT
+      - Wed, 27 Jan 2016 06:30:31 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -38,7 +38,7 @@ http_interactions:
       - en
     body:
       encoding: UTF-8
-      string: '{"last_message":"","created_at":1453800743,"last_message_ts":0,"channel_url":"jiver_group_messaging_AFD73870-2585-41C9-8E7F-D2A494BEC71A_e1ba77cca364b3d48cc6744550ea798113cf285c","members":[]}'
+      string: '{"last_message":"","created_at":1453800743,"last_message_ts":0,"channel_url":"jiver_group_messaging_AFD73870-2585-41C9-8E7F-D2A494BEC71A_e1ba77cca364b3d48cc6744550ea798113cf285c","members":[{"image":"https:\/\/sendbird.com\/main\/img\/profiles\/profile_18_512px.png","name":"Etienne","id":"user_12345"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jan 2016 10:14:55 GMT
+  recorded_at: Wed, 27 Jan 2016 06:30:30 GMT
 recorded_with: VCR 3.0.1

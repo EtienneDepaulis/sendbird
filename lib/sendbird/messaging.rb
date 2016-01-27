@@ -26,7 +26,7 @@ module Sendbird
 
       params = {
         channel_url: channel_url,
-        users_ids: users.map(&:id)
+        user_ids: users.map(&:id)
       }
 
       json = client.post("#{path}/invite", params)
